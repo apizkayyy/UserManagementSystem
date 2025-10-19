@@ -40,7 +40,6 @@ public class UserService {
         existingUser.setName(userDetails.getName());
         existingUser.setEmail(userDetails.getEmail());
         existingUser.setPassword(userDetails.getPassword());
-        existingUser.setRole(userDetails.getRole());
         return userRepository.save(existingUser);
     }
 
