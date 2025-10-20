@@ -1,10 +1,11 @@
 package com.example.usermanagement.repository;
 
-import org.springframework.data.jpa.repository.JpaRepository;
 import com.example.usermanagement.model.User;
+import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.stereotype.Repository;
 
-// JpaRepository provides CRUD methods like save(), findAll(), deleteById()
-public interface UserRepository extends JpaRepository<User, Long> {
-    // You can add custom query methods like:
+@Repository
+public interface UserRepository extends MongoRepository<User, String> {
+    // MongoRepository provides CRUD operations automatically
     boolean existsByEmail(String email);
 }

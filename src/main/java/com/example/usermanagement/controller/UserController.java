@@ -29,19 +29,19 @@ public class UserController {
 
     // GET: /api/users/{id}
     @GetMapping("/{id}")
-    public User getUserById(@PathVariable Long id) {
+    public User getUserById(@PathVariable String id) {
         return userService.getUserById(id);
     }
 
     // PUT: /api/users/{id}
     @PutMapping("/{id}")
-    public User updateUser(@PathVariable Long id, @RequestBody User user) {
+    public User updateUser(@PathVariable String id, @RequestBody User user) {
         return userService.updateUser(id, user);
     }
 
     // DELETE: /api/users/{id}
     @DeleteMapping("/{id}")
-    public String deleteUser(@PathVariable Long id) {
+    public String deleteUser(@PathVariable String id) {
         userService.deleteUser(id);
         return "User deleted successfully!";
     }

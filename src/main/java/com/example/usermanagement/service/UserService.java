@@ -29,13 +29,13 @@ public class UserService {
     }
 
     // READ user by ID
-    public User getUserById(Long id) {
+    public User getUserById(String id) {
         return userRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("User not found with ID: " + id));
     }
 
     // UPDATE user
-    public User updateUser(Long id, User userDetails) {
+    public User updateUser(String id, User userDetails) {
         User existingUser = getUserById(id);
         existingUser.setName(userDetails.getName());
         existingUser.setEmail(userDetails.getEmail());
@@ -44,7 +44,7 @@ public class UserService {
     }
 
     // DELETE user
-    public void deleteUser(Long id) {
+    public void deleteUser(String id) {
         userRepository.deleteById(id);
     }
 }
