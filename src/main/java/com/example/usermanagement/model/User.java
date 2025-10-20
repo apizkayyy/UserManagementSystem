@@ -1,9 +1,13 @@
 package com.example.usermanagement.model;
 
+import lombok.*;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection = "Person") // MongoDB collection name
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class User {
     @Id
     private String id;
@@ -11,9 +15,6 @@ public class User {
     private String name;
     private String email;
     private String password;
-
-    // Constructors
-    public User() {}
 
     public User(String name, String email, String password) {
         this.name = name;
