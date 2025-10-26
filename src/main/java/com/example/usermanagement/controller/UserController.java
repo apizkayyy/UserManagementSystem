@@ -15,6 +15,12 @@ public class UserController {
     @Autowired
     private UserService userService;
 
+    // In UserController.java (or create a new HomeController.java)
+    @GetMapping("/")
+    public String home() {
+        return "Welcome to the User Management System API!";
+    }
+
     // POST: /api/users
     @PostMapping
     public User createUser(@RequestBody User user) {
